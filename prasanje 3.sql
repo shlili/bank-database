@@ -1,0 +1,6 @@
+USE sistem;
+SELECT COUNT(A.account_id) AS acc, pt.NAME
+FROM (product AS p, product_type AS pt) LEFT JOIN account AS a ON A.PRODUCT_CD=p.PRODUCT_CD AND p.PRODUCT_TYPE_CD=pt.PRODUCT_TYPE_CD
+GROUP BY pt.NAME
+ORDER BY acc
+LIMIT 1
